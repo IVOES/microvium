@@ -1,0 +1,998 @@
+dist-c/microvium.c:6008:7: style: Non-boolean value returned from function returning bool [returnNonBoolInBooleanFunction]
+      return MVM_E_FATAL_ERROR_MUST_KILL_VM;
+      ^
+dist-c/microvium.c:6014:7: style: Non-boolean value returned from function returning bool [returnNonBoolInBooleanFunction]
+      return MVM_E_FATAL_ERROR_MUST_KILL_VM;
+      ^
+dist-c/microvium.c:2184:26: style:inconclusive: Boolean expression 'reg2B==0' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+        if ((reg2B == 0) & (reg1I < 0)) {
+                         ^
+dist-c/microvium.c:4184:24: warning: Either the condition '!handler' is redundant or there is possible null pointer dereference: handler. [nullPointerRedundantCheck]
+    mvm_TfHostFunction handler = NULL;
+                       ^
+dist-c/microvium.c:4190:9: note: Assuming that condition '!handler' is not redundant
+    if (!handler) {
+        ^
+dist-c/microvium.c:4184:24: note: Null pointer dereference
+    mvm_TfHostFunction handler = NULL;
+                       ^
+dist-c/microvium.c:2313:24: style: Variable 'lpProgramCounter' is reassigned a value before the old one has been used. [redundantAssignment]
+      lpProgramCounter = LongPtr_add(vm->lpBytecode, reg2 & ~1);
+                       ^
+dist-c/microvium.c:2302:9: note: lpProgramCounter is assigned
+        POP_REGISTERS();
+        ^
+dist-c/microvium.c:2313:24: note: lpProgramCounter is overwritten
+      lpProgramCounter = LongPtr_add(vm->lpBytecode, reg2 & ~1);
+                       ^
+dist-c/microvium.c:5723:7: style:inconclusive: Consecutive return, break, continue, goto or throw statements are unnecessary. [duplicateBreak]
+      break;
+      ^
+dist-c/microvium.c:1587:32: style:inconclusive: Function 'mvm_call' argument 2 names different: declaration 'func' definition 'targetFunc'. [funcArgNamesDifferent]
+TeError mvm_call(VM* vm, Value targetFunc, Value* out_result, Value* args, uint8_t argCount) {
+                               ^
+dist-c/microvium.h:199:55: note: Function 'mvm_call' argument 2 names different: declaration 'func' definition 'targetFunc'.
+MVM_EXPORT mvm_TeError mvm_call(mvm_VM* vm, mvm_Value func, mvm_Value* out_result, mvm_Value* args, uint8_t argCount);
+                                                      ^
+dist-c/microvium.c:1587:32: note: Function 'mvm_call' argument 2 names different: declaration 'func' definition 'targetFunc'.
+TeError mvm_call(VM* vm, Value targetFunc, Value* out_result, Value* args, uint8_t argCount) {
+                               ^
+dist-c/microvium.c:4074:56: style:inconclusive: Function 'mvm_restore' argument 2 names different: declaration 'snapshotBytecode' definition 'lpBytecode'. [funcArgNamesDifferent]
+TeError mvm_restore(mvm_VM** result, MVM_LONG_PTR_TYPE lpBytecode, size_t bytecodeSize_, void* context, mvm_TfResolveImport resolveImport) {
+                                                       ^
+dist-c/microvium.h:179:71: note: Function 'mvm_restore' argument 2 names different: declaration 'snapshotBytecode' definition 'lpBytecode'.
+MVM_EXPORT mvm_TeError mvm_restore(mvm_VM** result, MVM_LONG_PTR_TYPE snapshotBytecode, size_t bytecodeSize, void* context, mvm_TfResolveImport resolveImport);
+                                                                      ^
+dist-c/microvium.c:4074:56: note: Function 'mvm_restore' argument 2 names different: declaration 'snapshotBytecode' definition 'lpBytecode'.
+TeError mvm_restore(mvm_VM** result, MVM_LONG_PTR_TYPE lpBytecode, size_t bytecodeSize_, void* context, mvm_TfResolveImport resolveImport) {
+                                                       ^
+dist-c/microvium.c:4074:75: style:inconclusive: Function 'mvm_restore' argument 3 names different: declaration 'bytecodeSize' definition 'bytecodeSize_'. [funcArgNamesDifferent]
+TeError mvm_restore(mvm_VM** result, MVM_LONG_PTR_TYPE lpBytecode, size_t bytecodeSize_, void* context, mvm_TfResolveImport resolveImport) {
+                                                                          ^
+dist-c/microvium.h:179:96: note: Function 'mvm_restore' argument 3 names different: declaration 'bytecodeSize' definition 'bytecodeSize_'.
+MVM_EXPORT mvm_TeError mvm_restore(mvm_VM** result, MVM_LONG_PTR_TYPE snapshotBytecode, size_t bytecodeSize, void* context, mvm_TfResolveImport resolveImport);
+                                                                                               ^
+dist-c/microvium.c:4074:75: note: Function 'mvm_restore' argument 3 names different: declaration 'bytecodeSize' definition 'bytecodeSize_'.
+TeError mvm_restore(mvm_VM** result, MVM_LONG_PTR_TYPE lpBytecode, size_t bytecodeSize_, void* context, mvm_TfResolveImport resolveImport) {
+                                                                          ^
+dist-c/microvium.c:4517:55: style:inconclusive: Function 'vm_findScopedVariable' argument 2 names different: declaration 'index' definition 'varIndex'. [funcArgNamesDifferent]
+static LongPtr vm_findScopedVariable(VM* vm, uint16_t varIndex) {
+                                                      ^
+dist-c/microvium.c:1411:55: note: Function 'vm_findScopedVariable' argument 2 names different: declaration 'index' definition 'varIndex'.
+static LongPtr vm_findScopedVariable(VM* vm, uint16_t index);
+                                                      ^
+dist-c/microvium.c:4517:55: note: Function 'vm_findScopedVariable' argument 2 names different: declaration 'index' definition 'varIndex'.
+static LongPtr vm_findScopedVariable(VM* vm, uint16_t varIndex) {
+                                                      ^
+dist-c/microvium.c:4559:52: style:inconclusive: Function 'mvm_getMemoryStats' argument 2 names different: declaration 'out_stats' definition 'r'. [funcArgNamesDifferent]
+void mvm_getMemoryStats(VM* vm, mvm_TsMemoryStats* r) {
+                                                   ^
+dist-c/microvium.h:387:67: note: Function 'mvm_getMemoryStats' argument 2 names different: declaration 'out_stats' definition 'r'.
+MVM_EXPORT void mvm_getMemoryStats(mvm_VM* vm, mvm_TsMemoryStats* out_stats);
+                                                                  ^
+dist-c/microvium.c:4559:52: note: Function 'mvm_getMemoryStats' argument 2 names different: declaration 'out_stats' definition 'r'.
+void mvm_getMemoryStats(VM* vm, mvm_TsMemoryStats* r) {
+                                                   ^
+dist-c/microvium.c:5586:58: style:inconclusive: Function 'mvm_resolveExports' argument 2 names different: declaration 'ids' definition 'idTable'. [funcArgNamesDifferent]
+TeError mvm_resolveExports(VM* vm, const mvm_VMExportID* idTable, Value* resultTable, uint8_t count) {
+                                                         ^
+dist-c/microvium.h:356:77: note: Function 'mvm_resolveExports' argument 2 names different: declaration 'ids' definition 'idTable'.
+MVM_EXPORT mvm_TeError mvm_resolveExports(mvm_VM* vm, const mvm_VMExportID* ids, mvm_Value* results, uint8_t count);
+                                                                            ^
+dist-c/microvium.c:5586:58: note: Function 'mvm_resolveExports' argument 2 names different: declaration 'ids' definition 'idTable'.
+TeError mvm_resolveExports(VM* vm, const mvm_VMExportID* idTable, Value* resultTable, uint8_t count) {
+                                                         ^
+dist-c/microvium.c:5586:74: style:inconclusive: Function 'mvm_resolveExports' argument 3 names different: declaration 'results' definition 'resultTable'. [funcArgNamesDifferent]
+TeError mvm_resolveExports(VM* vm, const mvm_VMExportID* idTable, Value* resultTable, uint8_t count) {
+                                                                         ^
+dist-c/microvium.h:356:93: note: Function 'mvm_resolveExports' argument 3 names different: declaration 'results' definition 'resultTable'.
+MVM_EXPORT mvm_TeError mvm_resolveExports(mvm_VM* vm, const mvm_VMExportID* ids, mvm_Value* results, uint8_t count);
+                                                                                            ^
+dist-c/microvium.c:5586:74: note: Function 'mvm_resolveExports' argument 3 names different: declaration 'results' definition 'resultTable'.
+TeError mvm_resolveExports(VM* vm, const mvm_VMExportID* idTable, Value* resultTable, uint8_t count) {
+                                                                         ^
+dist-c/microvium.c:6211:27: style:inconclusive: Function 'mvm_newBoolean' argument 1 names different: declaration 'value' definition 'source'. [funcArgNamesDifferent]
+Value mvm_newBoolean(bool source) {
+                          ^
+dist-c/microvium.h:295:42: note: Function 'mvm_newBoolean' argument 1 names different: declaration 'value' definition 'source'.
+MVM_EXPORT mvm_Value mvm_newBoolean(bool value);
+                                         ^
+dist-c/microvium.c:6211:27: note: Function 'mvm_newBoolean' argument 1 names different: declaration 'value' definition 'source'.
+Value mvm_newBoolean(bool source) {
+                          ^
+dist-c/microvium.c:6216:55: style:inconclusive: Function 'vm_allocString' argument 3 names different: declaration 'data' definition 'out_pData'. [funcArgNamesDifferent]
+Value vm_allocString(VM* vm, size_t sizeBytes, void** out_pData) {
+                                                      ^
+dist-c/microvium.c:1376:62: note: Function 'vm_allocString' argument 3 names different: declaration 'data' definition 'out_pData'.
+static Value vm_allocString(VM* vm, size_t sizeBytes, void** data);
+                                                             ^
+dist-c/microvium.c:6216:55: note: Function 'vm_allocString' argument 3 names different: declaration 'data' definition 'out_pData'.
+Value vm_allocString(VM* vm, size_t sizeBytes, void** out_pData) {
+                                                      ^
+dist-c/microvium.c:6237:41: style:inconclusive: Function 'mvm_newString' argument 2 names different: declaration 'valueUtf8' definition 'sourceUtf8'. [funcArgNamesDifferent]
+Value mvm_newString(VM* vm, const char* sourceUtf8, size_t sizeBytes) {
+                                        ^
+dist-c/microvium.h:314:60: note: Function 'mvm_newString' argument 2 names different: declaration 'valueUtf8' definition 'sourceUtf8'.
+MVM_EXPORT mvm_Value mvm_newString(mvm_VM* vm, const char* valueUtf8, size_t sizeBytes);
+                                                           ^
+dist-c/microvium.c:6237:41: note: Function 'mvm_newString' argument 2 names different: declaration 'valueUtf8' definition 'sourceUtf8'.
+Value mvm_newString(VM* vm, const char* sourceUtf8, size_t sizeBytes) {
+                                        ^
+dist-c/microvium.c:6599:45: style:inconclusive: Function 'vm_objectKeys' argument 2 names different: declaration 'pObject' definition 'inout_slot'. [funcArgNamesDifferent]
+static TeError vm_objectKeys(VM* vm, Value* inout_slot) {
+                                            ^
+dist-c/microvium.c:1428:45: note: Function 'vm_objectKeys' argument 2 names different: declaration 'pObject' definition 'inout_slot'.
+static TeError vm_objectKeys(VM* vm, Value* pObject);
+                                            ^
+dist-c/microvium.c:6599:45: note: Function 'vm_objectKeys' argument 2 names different: declaration 'pObject' definition 'inout_slot'.
+static TeError vm_objectKeys(VM* vm, Value* inout_slot) {
+                                            ^
+dist-c/microvium.c:7173:49: style:inconclusive: Function 'vm_stringSizeUtf8' argument 2 names different: declaration 'str' definition 'value'. [funcArgNamesDifferent]
+static uint16_t vm_stringSizeUtf8(VM* vm, Value value) {
+                                                ^
+dist-c/microvium.c:1381:49: note: Function 'vm_stringSizeUtf8' argument 2 names different: declaration 'str' definition 'value'.
+static uint16_t vm_stringSizeUtf8(VM* vm, Value str);
+                                                ^
+dist-c/microvium.c:7173:49: note: Function 'vm_stringSizeUtf8' argument 2 names different: declaration 'str' definition 'value'.
+static uint16_t vm_stringSizeUtf8(VM* vm, Value value) {
+                                                ^
+dist-c/microvium.c:7982:75: style:inconclusive: Function 'mvm_uint8ArrayFromBytes' argument 3 names different: declaration 'size' definition 'sizeBytes'. [funcArgNamesDifferent]
+mvm_Value mvm_uint8ArrayFromBytes(mvm_VM* vm, const uint8_t* data, size_t sizeBytes) {
+                                                                          ^
+dist-c/microvium.h:329:86: note: Function 'mvm_uint8ArrayFromBytes' argument 3 names different: declaration 'size' definition 'sizeBytes'.
+MVM_EXPORT mvm_Value mvm_uint8ArrayFromBytes(mvm_VM* vm, const uint8_t* data, size_t size);
+                                                                                     ^
+dist-c/microvium.c:7982:75: note: Function 'mvm_uint8ArrayFromBytes' argument 3 names different: declaration 'size' definition 'sizeBytes'.
+mvm_Value mvm_uint8ArrayFromBytes(mvm_VM* vm, const uint8_t* data, size_t sizeBytes) {
+                                                                          ^
+dist-c/microvium.c:2000:15: style: Local variable 'lpVar' shadows outer variable [shadowVariable]
+      LongPtr lpVar;
+              ^
+dist-c/microvium.c:1892:15: note: Shadowed declaration
+      LongPtr lpVar;
+              ^
+dist-c/microvium.c:2000:15: note: Shadow variable
+      LongPtr lpVar;
+              ^
+dist-c/microvium.c:5154:16: style: Local variable 'headerWord' shadows outer variable [shadowVariable]
+      uint16_t headerWord = readAllocationHeaderWord(props);
+               ^
+dist-c/microvium.c:5054:18: note: Shadowed declaration
+  const uint16_t headerWord = pSrc[-1];
+                 ^
+dist-c/microvium.c:5154:16: note: Shadow variable
+      uint16_t headerWord = readAllocationHeaderWord(props);
+               ^
+dist-c/microvium.c:5166:18: style: Local variable 'headerWord' shadows outer variable [shadowVariable]
+        uint16_t headerWord = readAllocationHeaderWord(child);
+                 ^
+dist-c/microvium.c:5154:16: note: Shadowed declaration
+      uint16_t headerWord = readAllocationHeaderWord(props);
+               ^
+dist-c/microvium.c:5166:18: note: Shadow variable
+        uint16_t headerWord = readAllocationHeaderWord(child);
+                 ^
+dist-c/microvium.c:5167:18: style: Local variable 'allocationSize' shadows outer variable [shadowVariable]
+        uint16_t allocationSize = vm_getAllocationSizeExcludingHeaderFromHeaderWord(headerWord);
+                 ^
+dist-c/microvium.c:5155:16: note: Shadowed declaration
+      uint16_t allocationSize = vm_getAllocationSizeExcludingHeaderFromHeaderWord(headerWord);
+               ^
+dist-c/microvium.c:5167:18: note: Shadow variable
+        uint16_t allocationSize = vm_getAllocationSizeExcludingHeaderFromHeaderWord(headerWord);
+                 ^
+dist-c/microvium.c:5382:15: style: Local variable 'p' shadows outer variable [shadowVariable]
+    uint16_t* p = (uint16_t*)getBucketDataBegin(bucket);
+              ^
+dist-c/microvium.c:5264:13: note: Shadowed declaration
+  uint16_t* p;
+            ^
+dist-c/microvium.c:5382:15: note: Shadow variable
+    uint16_t* p = (uint16_t*)getBucketDataBegin(bucket);
+              ^
+dist-c/microvium.c:6658:14: style: Local variable 'propsSize' shadows outer variable [shadowVariable]
+    uint16_t propsSize = vm_getAllocationSize_long(lpPropList) - sizeof(TsPropertyList);
+             ^
+dist-c/microvium.c:6624:12: note: Shadowed declaration
+  uint16_t propsSize = 0;
+           ^
+dist-c/microvium.c:6658:14: note: Shadow variable
+    uint16_t propsSize = vm_getAllocationSize_long(lpPropList) - sizeof(TsPropertyList);
+             ^
+dist-c/microvium.c:1168:9: style: struct member 'TsVirtual::state' is never used. [unusedStructMember]
+  Value state;
+        ^
+dist-c/microvium.c:1169:9: style: struct member 'TsVirtual::type' is never used. [unusedStructMember]
+  Value type;
+        ^
+dist-c/microvium.c:1205:12: style: struct member 'TsBreakpoint::bytecodeAddress' is never used. [unusedStructMember]
+  uint16_t bytecodeAddress;
+           ^
+dist-c/microvium.c:1322:12: style: struct member 'TsAllocationHeader::headerData' is never used. [unusedStructMember]
+  uint16_t headerData;
+           ^
+dist-c/microvium.c:1326:11: style: struct member 'TsBytecodeFunc::maxStackDepth' is never used. [unusedStructMember]
+  uint8_t maxStackDepth;
+          ^
+dist-c/microvium.c:7233:19: style: Variable 'type' is assigned a value that is never used. [unreadVariable]
+  TeTypeCode type = deepTypeOf(vm, value);
+                  ^
+dist-c/microvium.c:7955:17: style: Variable 'context' is assigned a value that is never used. [unreadVariable]
+  void* context = vm->context;
+                ^
+dist-c/microvium.c:7876:0: information: Skipping configuration 'MVM_NATIVE_POINTER_IS_16_BIT' since the value of 'MVM_NATIVE_POINTER_IS_16_BIT' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  if (MVM_NATIVE_POINTER_IS_16_BIT && (sizeof(void*) != 2)) return MVM_E_EXPECTED_POINTER_SIZE_TO_BE_16_BIT;
+^
+dist-c/microvium.c:7877:0: information: Skipping configuration 'MVM_NATIVE_POINTER_IS_16_BIT' since the value of 'MVM_NATIVE_POINTER_IS_16_BIT' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  if ((!MVM_NATIVE_POINTER_IS_16_BIT) && (sizeof(void*) == 2)) return MVM_E_EXPECTED_POINTER_SIZE_NOT_TO_BE_16_BIT;
+^
+dist-c/microvium.c:4070:5: style:inconclusive: Boolean expression 'offset>=getSectionOffset(vm->lpBytecode,BCS_ROM)' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+    & (offset < getSectionOffset(vm->lpBytecode, vm_sectionAfter(vm, BCS_ROM)));
+    ^
+dist-c/microvium.c:6703:3: style: Redundant initialization for '_vObjectValuePotentialCycleNumber'. The initialized value is overwritten before it is read. [redundantInitialization]
+  MVM_SET_LOCAL(vObjectValue, pOperands[0]);
+  ^
+dist-c/microvium.c:6697:3: note: _vObjectValuePotentialCycleNumber is initialized
+  MVM_LOCAL(Value, vObjectValue, 0);
+  ^
+dist-c/microvium.c:6703:3: note: _vObjectValuePotentialCycleNumber is overwritten
+  MVM_SET_LOCAL(vObjectValue, pOperands[0]);
+  ^
+dist-c/microvium.c:5115:18: style: Local variable 'headerWord' shadows outer variable [shadowVariable]
+        uint16_t headerWord = readAllocationHeaderWord(pData);
+                 ^
+dist-c/microvium.c:5054:18: note: Shadowed declaration
+  const uint16_t headerWord = pSrc[-1];
+                 ^
+dist-c/microvium.c:5115:18: note: Shadow variable
+        uint16_t headerWord = readAllocationHeaderWord(pData);
+                 ^
+dist-c/microvium.c:4761:56: style:inconclusive: Function 'ShortPtr_decode' argument 2 names different: declaration 'shortPtr' definition 'ptr'. [funcArgNamesDifferent]
+  static inline void* ShortPtr_decode(VM* vm, ShortPtr ptr) {
+                                                       ^
+dist-c/microvium.c:1422:47: note: Function 'ShortPtr_decode' argument 2 names different: declaration 'shortPtr' definition 'ptr'.
+static void* ShortPtr_decode(VM* vm, ShortPtr shortPtr);
+                                              ^
+dist-c/microvium.c:4761:56: note: Function 'ShortPtr_decode' argument 2 names different: declaration 'shortPtr' definition 'ptr'.
+  static inline void* ShortPtr_decode(VM* vm, ShortPtr ptr) {
+                                                       ^
+native-vm-bindings/Value.hh:15:3: style: Class 'Value' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  Value(const Napi::CallbackInfo&);
+  ^
+native-vm-bindings/NativeVM.hh:14:3: style: Class 'NativeVM' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  NativeVM(const Napi::CallbackInfo&);
+  ^
+native-vm-bindings/NativeVM.cc:65:36: style: Local variable 'err' shadows outer variable [shadowVariable]
+      std::unique_ptr<Napi::Error> err(std::move(this->error));
+                                   ^
+native-vm-bindings/NativeVM.cc:62:15: note: Shadowed declaration
+  mvm_TeError err = mvm_restore(&this->vm, this->bytecode, bytecodeLength, this, NativeVM::resolveImportHandler);
+              ^
+native-vm-bindings/NativeVM.cc:65:36: note: Shadow variable
+      std::unique_ptr<Napi::Error> err(std::move(this->error));
+                                   ^
+native-vm-bindings/NativeVM.cc:251:36: style: Local variable 'err' shadows outer variable [shadowVariable]
+      std::unique_ptr<Napi::Error> err(std::move(this->error));
+                                   ^
+native-vm-bindings/NativeVM.cc:207:15: note: Shadowed declaration
+  mvm_TeError err;
+              ^
+native-vm-bindings/NativeVM.cc:251:36: note: Shadow variable
+      std::unique_ptr<Napi::Error> err(std::move(this->error));
+                                   ^
+native-vm-bindings/Value.cc:47:12: warning: Member variable 'Value::_handle' is not initialized in the constructor. [uninitMemberVar]
+VM::Value::Value(const Napi::CallbackInfo& info) : ObjectWrap(info), _vm(nullptr) {
+           ^
+native-vm-bindings/WeakRef.hh:13:3: style: Class 'WeakRef' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  WeakRef(const Napi::CallbackInfo&);
+  ^
+native-vm-vs-project/project.cpp:233:22: style: C-style pointer casting [cstyleCast]
+  Context* context = (Context*)mvm_getContext(vm);
+                     ^
+native-vm-vs-project/project.cpp:245:22: style: C-style pointer casting [cstyleCast]
+  Context* context = (Context*)mvm_getContext(vm);
+                     ^
+native-vm-vs-project/project.cpp:261:22: style: C-style pointer casting [cstyleCast]
+  Context* context = (Context*)mvm_getContext(vm);
+                     ^
+native-vm-vs-project/project.cpp:221:21: performance: Function parameter 'message' should be passed by const reference. [passedByValue]
+int testFail(string message) {
+                    ^
+native-vm-vs-project/project.cpp:227:22: performance: Function parameter 'message' should be passed by const reference. [passedByValue]
+void testPass(string message) {
+                     ^
+native-vm-vs-project/project.cpp:245:20: style: Variable 'context' is assigned a value that is never used. [unreadVariable]
+  Context* context = (Context*)mvm_getContext(vm);
+                   ^
+native-vm-vs-project/project.cpp:261:20: style: Variable 'context' is assigned a value that is never used. [unreadVariable]
+  Context* context = (Context*)mvm_getContext(vm);
+                   ^
+native-vm-vs-project/yaml-cpp/src/contrib/graphbuilderadapter.h:28:3: style: Class 'GraphBuilderAdapter' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  GraphBuilderAdapter(GraphBuilderInterface& builder)
+  ^
+native-vm-vs-project/yaml-cpp/src/contrib/graphbuilderadapter.h:59:5: style: Struct 'ContainerFrame' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    ContainerFrame(void* pSequence)
+    ^
+native-vm-vs-project/yaml-cpp/src/indentation.h:17:3: style: Struct 'Indentation' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  Indentation(std::size_t n_) : n(n_) {}
+  ^
+native-vm-vs-project/yaml-cpp/src/indentation.h:29:3: style: Struct 'IndentTo' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  IndentTo(std::size_t n_) : n(n_) {}
+  ^
+native-vm-vs-project/yaml-cpp/src/setting.h:27:3: style: Class 'Setting < EMITTER_MANIP >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  Setting(const T& value) : m_value() { set(value); }
+  ^
+native-vm-vs-project/yaml-cpp/src/setting.h:27:3: style: Class 'Setting < unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  Setting(const T& value) : m_value() { set(value); }
+  ^
+native-vm-vs-project/yaml-cpp/src/setting.h:40:3: style: Class 'SettingChange < EMITTER_MANIP >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  SettingChange(Setting<T>* pSetting)
+  ^
+native-vm-vs-project/yaml-cpp/src/setting.h:40:3: style: Class 'SettingChange < unsigned long >' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  SettingChange(Setting<T>* pSetting)
+  ^
+native-vm-vs-project/yaml-cpp/src/regex_yaml.h:59:8: performance:inconclusive: Technically the member function 'YAML::RegEx::IsValidSource' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  bool IsValidSource(const Source& source) const;
+       ^
+native-vm-vs-project/yaml-cpp/src/regeximpl.h:51:20: note: Technically the member function 'YAML::RegEx::IsValidSource' can be static (but you may consider moving to unnamed namespace).
+inline bool RegEx::IsValidSource(const Source& source) const {
+                   ^
+native-vm-vs-project/yaml-cpp/src/regex_yaml.h:59:8: note: Technically the member function 'YAML::RegEx::IsValidSource' can be static (but you may consider moving to unnamed namespace).
+  bool IsValidSource(const Source& source) const;
+       ^
+native-vm-vs-project/yaml-cpp/src/regex_yaml.h:64:7: performance:inconclusive: Technically the member function 'YAML::RegEx::MatchOpEmpty' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  int MatchOpEmpty(const Source& source) const;
+      ^
+native-vm-vs-project/yaml-cpp/src/regeximpl.h:102:19: note: Technically the member function 'YAML::RegEx::MatchOpEmpty' can be static (but you may consider moving to unnamed namespace).
+inline int RegEx::MatchOpEmpty(const Source& source) const {
+                  ^
+native-vm-vs-project/yaml-cpp/src/regex_yaml.h:64:7: note: Technically the member function 'YAML::RegEx::MatchOpEmpty' can be static (but you may consider moving to unnamed namespace).
+  int MatchOpEmpty(const Source& source) const;
+      ^
+native-vm-vs-project/yaml-cpp/src/regex_yaml.h:36:3: style: Class 'RegEx' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  RegEx(const std::string& str, REGEX_OP op = REGEX_SEQ);
+  ^
+native-vm-vs-project/yaml-cpp/src/stream.h:26:3: style: Class 'Stream' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  Stream(std::istream& input);
+  ^
+native-vm-vs-project/yaml-cpp/src/streamcharsource.h:18:3: style: Class 'StreamCharSource' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  StreamCharSource(const Stream& stream) : m_offset(0), m_stream(stream) {}
+  ^
+native-vm-vs-project/yaml-cpp/src/emitterutils.cpp:221:69: style: Consider using std::any_of algorithm instead of a raw loop. [useStlAlgorithm]
+    if (escapeNonAscii && (0x80 <= static_cast<unsigned char>(ch))) {
+                                                                    ^
+native-vm-vs-project/yaml-cpp/src/exp.cpp:131:21: style: Unused variable: msg [unusedVariable]
+  std::stringstream msg;
+                    ^
+native-vm-vs-project/yaml-cpp/src/scanner.h:93:15: performance:inconclusive: Technically the member function 'YAML::Scanner::GetStartTokenFor' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  Token::TYPE GetStartTokenFor(IndentMarker::INDENT_TYPE type) const;
+              ^
+native-vm-vs-project/yaml-cpp/src/scanner.cpp:272:22: note: Technically the member function 'YAML::Scanner::GetStartTokenFor' can be static (but you may consider moving to unnamed namespace).
+Token::TYPE Scanner::GetStartTokenFor(IndentMarker::INDENT_TYPE type) const {
+                     ^
+native-vm-vs-project/yaml-cpp/src/scanner.h:93:15: note: Technically the member function 'YAML::Scanner::GetStartTokenFor' can be static (but you may consider moving to unnamed namespace).
+  Token::TYPE GetStartTokenFor(IndentMarker::INDENT_TYPE type) const;
+              ^
+native-vm-vs-project/yaml-cpp/src/scanner.h:134:8: performance:inconclusive: Technically the member function 'YAML::Scanner::IsWhitespaceToBeEaten' can be static (but you may consider moving to unnamed namespace). [functionStatic]
+  bool IsWhitespaceToBeEaten(char ch);
+       ^
+native-vm-vs-project/yaml-cpp/src/scanner.cpp:225:15: note: Technically the member function 'YAML::Scanner::IsWhitespaceToBeEaten' can be static (but you may consider moving to unnamed namespace).
+bool Scanner::IsWhitespaceToBeEaten(char ch) {
+              ^
+native-vm-vs-project/yaml-cpp/src/scanner.h:134:8: note: Technically the member function 'YAML::Scanner::IsWhitespaceToBeEaten' can be static (but you may consider moving to unnamed namespace).
+  bool IsWhitespaceToBeEaten(char ch);
+       ^
+native-vm-vs-project/yaml-cpp/src/scanscalar.cpp:177:34: style:inconclusive: Boolean expression 'nextMoreIndented' is used in bitwise operation. Did you mean '||'? [bitwiseOnBoolean]
+                nextMoreIndented | !foundNonEmptyLine) {
+                                 ^
+native-vm-vs-project/yaml-cpp/src/scanscalar.cpp:177:34: style: Boolean result is used in bitwise operation. Clarify expression with parentheses. [clarifyCondition]
+                nextMoreIndented | !foundNonEmptyLine) {
+                                 ^
+native-vm-vs-project/yaml-cpp/src/scanscalar.cpp:21:57: style:inconclusive: Function 'ScanScalar' argument 2 names different: declaration 'info' definition 'params'. [funcArgNamesDifferent]
+std::string ScanScalar(Stream& INPUT, ScanScalarParams& params) {
+                                                        ^
+native-vm-vs-project/yaml-cpp/src/scanscalar.h:60:57: note: Function 'ScanScalar' argument 2 names different: declaration 'info' definition 'params'.
+std::string ScanScalar(Stream& INPUT, ScanScalarParams& info);
+                                                        ^
+native-vm-vs-project/yaml-cpp/src/scanscalar.cpp:21:57: note: Function 'ScanScalar' argument 2 names different: declaration 'info' definition 'params'.
+std::string ScanScalar(Stream& INPUT, ScanScalarParams& params) {
+                                                        ^
+native-vm-vs-project/yaml-cpp/src/scantoken.cpp:341:38: style:inconclusive: Boolean expression '!Exp::EscSingleQuote()' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+  RegEx end = (single ? RegEx(quote) & !Exp::EscSingleQuote() : RegEx(quote));
+                                     ^
+native-vm-vs-project/yaml-cpp/src/tag.h:25:3: style: Struct 'Tag' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+  Tag(const Token& token);
+  ^
+native-vm-vs-project/yaml-cpp/src/scantoken.cpp:341:38: style: Boolean result is used in bitwise operation. Clarify expression with parentheses. [clarifyCondition]
+  RegEx end = (single ? RegEx(quote) & !Exp::EscSingleQuote() : RegEx(quote));
+                                     ^
+native-vm-vs-project/yaml-cpp/src/scantoken.cpp:21:15: style: Unused variable: name [unusedVariable]
+  std::string name;
+              ^
+native-vm-vs-project/yaml-cpp/src/scantoken.cpp:22:28: style: Unused variable: params [unusedVariable]
+  std::vector<std::string> params;
+                           ^
+native-vm-vs-project/yaml-cpp/src/singledocparser.cpp:31:21: warning: Assert statement calls a function which may have desired side effects: 'empty'. [assertWithSideEffect]
+  assert(!m_scanner.empty());  // guaranteed that there are tokens
+                    ^
+native-vm/microvium.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 14 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+native-vm/microvium.c:4477:7: style: Non-boolean value returned from function returning bool [returnNonBoolInBooleanFunction]
+      return MVM_E_FATAL_ERROR_MUST_KILL_VM;
+      ^
+native-vm/microvium.c:4483:7: style: Non-boolean value returned from function returning bool [returnNonBoolInBooleanFunction]
+      return MVM_E_FATAL_ERROR_MUST_KILL_VM;
+      ^
+native-vm/microvium.c:653:26: style:inconclusive: Boolean expression 'reg2B==0' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+        if ((reg2B == 0) & (reg1I < 0)) {
+                         ^
+native-vm/microvium.c:2653:24: warning: Either the condition '!handler' is redundant or there is possible null pointer dereference: handler. [nullPointerRedundantCheck]
+    mvm_TfHostFunction handler = NULL;
+                       ^
+native-vm/microvium.c:2659:9: note: Assuming that condition '!handler' is not redundant
+    if (!handler) {
+        ^
+native-vm/microvium.c:2653:24: note: Null pointer dereference
+    mvm_TfHostFunction handler = NULL;
+                       ^
+native-vm/microvium.c:782:24: style: Variable 'lpProgramCounter' is reassigned a value before the old one has been used. [redundantAssignment]
+      lpProgramCounter = LongPtr_add(vm->lpBytecode, reg2 & ~1);
+                       ^
+native-vm/microvium.c:771:9: note: lpProgramCounter is assigned
+        POP_REGISTERS();
+        ^
+native-vm/microvium.c:782:24: note: lpProgramCounter is overwritten
+      lpProgramCounter = LongPtr_add(vm->lpBytecode, reg2 & ~1);
+                       ^
+native-vm/microvium.c:4192:7: style:inconclusive: Consecutive return, break, continue, goto or throw statements are unnecessary. [duplicateBreak]
+      break;
+      ^
+native-vm/microvium.c:56:32: style:inconclusive: Function 'mvm_call' argument 2 names different: declaration 'func' definition 'targetFunc'. [funcArgNamesDifferent]
+TeError mvm_call(VM* vm, Value targetFunc, Value* out_result, Value* args, uint8_t argCount) {
+                               ^
+native-vm/microvium.h:199:55: note: Function 'mvm_call' argument 2 names different: declaration 'func' definition 'targetFunc'.
+MVM_EXPORT mvm_TeError mvm_call(mvm_VM* vm, mvm_Value func, mvm_Value* out_result, mvm_Value* args, uint8_t argCount);
+                                                      ^
+native-vm/microvium.c:56:32: note: Function 'mvm_call' argument 2 names different: declaration 'func' definition 'targetFunc'.
+TeError mvm_call(VM* vm, Value targetFunc, Value* out_result, Value* args, uint8_t argCount) {
+                               ^
+native-vm/microvium.c:2543:56: style:inconclusive: Function 'mvm_restore' argument 2 names different: declaration 'snapshotBytecode' definition 'lpBytecode'. [funcArgNamesDifferent]
+TeError mvm_restore(mvm_VM** result, MVM_LONG_PTR_TYPE lpBytecode, size_t bytecodeSize_, void* context, mvm_TfResolveImport resolveImport) {
+                                                       ^
+native-vm/microvium.h:179:71: note: Function 'mvm_restore' argument 2 names different: declaration 'snapshotBytecode' definition 'lpBytecode'.
+MVM_EXPORT mvm_TeError mvm_restore(mvm_VM** result, MVM_LONG_PTR_TYPE snapshotBytecode, size_t bytecodeSize, void* context, mvm_TfResolveImport resolveImport);
+                                                                      ^
+native-vm/microvium.c:2543:56: note: Function 'mvm_restore' argument 2 names different: declaration 'snapshotBytecode' definition 'lpBytecode'.
+TeError mvm_restore(mvm_VM** result, MVM_LONG_PTR_TYPE lpBytecode, size_t bytecodeSize_, void* context, mvm_TfResolveImport resolveImport) {
+                                                       ^
+native-vm/microvium.c:2543:75: style:inconclusive: Function 'mvm_restore' argument 3 names different: declaration 'bytecodeSize' definition 'bytecodeSize_'. [funcArgNamesDifferent]
+TeError mvm_restore(mvm_VM** result, MVM_LONG_PTR_TYPE lpBytecode, size_t bytecodeSize_, void* context, mvm_TfResolveImport resolveImport) {
+                                                                          ^
+native-vm/microvium.h:179:96: note: Function 'mvm_restore' argument 3 names different: declaration 'bytecodeSize' definition 'bytecodeSize_'.
+MVM_EXPORT mvm_TeError mvm_restore(mvm_VM** result, MVM_LONG_PTR_TYPE snapshotBytecode, size_t bytecodeSize, void* context, mvm_TfResolveImport resolveImport);
+                                                                                               ^
+native-vm/microvium.c:2543:75: note: Function 'mvm_restore' argument 3 names different: declaration 'bytecodeSize' definition 'bytecodeSize_'.
+TeError mvm_restore(mvm_VM** result, MVM_LONG_PTR_TYPE lpBytecode, size_t bytecodeSize_, void* context, mvm_TfResolveImport resolveImport) {
+                                                                          ^
+native-vm/microvium.c:2986:55: style:inconclusive: Function 'vm_findScopedVariable' argument 2 names different: declaration 'index' definition 'varIndex'. [funcArgNamesDifferent]
+static LongPtr vm_findScopedVariable(VM* vm, uint16_t varIndex) {
+                                                      ^
+native-vm/microvium_internals.h:861:55: note: Function 'vm_findScopedVariable' argument 2 names different: declaration 'index' definition 'varIndex'.
+static LongPtr vm_findScopedVariable(VM* vm, uint16_t index);
+                                                      ^
+native-vm/microvium.c:2986:55: note: Function 'vm_findScopedVariable' argument 2 names different: declaration 'index' definition 'varIndex'.
+static LongPtr vm_findScopedVariable(VM* vm, uint16_t varIndex) {
+                                                      ^
+native-vm/microvium.c:3028:52: style:inconclusive: Function 'mvm_getMemoryStats' argument 2 names different: declaration 'out_stats' definition 'r'. [funcArgNamesDifferent]
+void mvm_getMemoryStats(VM* vm, mvm_TsMemoryStats* r) {
+                                                   ^
+native-vm/microvium.h:387:67: note: Function 'mvm_getMemoryStats' argument 2 names different: declaration 'out_stats' definition 'r'.
+MVM_EXPORT void mvm_getMemoryStats(mvm_VM* vm, mvm_TsMemoryStats* out_stats);
+                                                                  ^
+native-vm/microvium.c:3028:52: note: Function 'mvm_getMemoryStats' argument 2 names different: declaration 'out_stats' definition 'r'.
+void mvm_getMemoryStats(VM* vm, mvm_TsMemoryStats* r) {
+                                                   ^
+native-vm/microvium.c:4055:58: style:inconclusive: Function 'mvm_resolveExports' argument 2 names different: declaration 'ids' definition 'idTable'. [funcArgNamesDifferent]
+TeError mvm_resolveExports(VM* vm, const mvm_VMExportID* idTable, Value* resultTable, uint8_t count) {
+                                                         ^
+native-vm/microvium.h:356:77: note: Function 'mvm_resolveExports' argument 2 names different: declaration 'ids' definition 'idTable'.
+MVM_EXPORT mvm_TeError mvm_resolveExports(mvm_VM* vm, const mvm_VMExportID* ids, mvm_Value* results, uint8_t count);
+                                                                            ^
+native-vm/microvium.c:4055:58: note: Function 'mvm_resolveExports' argument 2 names different: declaration 'ids' definition 'idTable'.
+TeError mvm_resolveExports(VM* vm, const mvm_VMExportID* idTable, Value* resultTable, uint8_t count) {
+                                                         ^
+native-vm/microvium.c:4055:74: style:inconclusive: Function 'mvm_resolveExports' argument 3 names different: declaration 'results' definition 'resultTable'. [funcArgNamesDifferent]
+TeError mvm_resolveExports(VM* vm, const mvm_VMExportID* idTable, Value* resultTable, uint8_t count) {
+                                                                         ^
+native-vm/microvium.h:356:93: note: Function 'mvm_resolveExports' argument 3 names different: declaration 'results' definition 'resultTable'.
+MVM_EXPORT mvm_TeError mvm_resolveExports(mvm_VM* vm, const mvm_VMExportID* ids, mvm_Value* results, uint8_t count);
+                                                                                            ^
+native-vm/microvium.c:4055:74: note: Function 'mvm_resolveExports' argument 3 names different: declaration 'results' definition 'resultTable'.
+TeError mvm_resolveExports(VM* vm, const mvm_VMExportID* idTable, Value* resultTable, uint8_t count) {
+                                                                         ^
+native-vm/microvium.c:4680:27: style:inconclusive: Function 'mvm_newBoolean' argument 1 names different: declaration 'value' definition 'source'. [funcArgNamesDifferent]
+Value mvm_newBoolean(bool source) {
+                          ^
+native-vm/microvium.h:295:42: note: Function 'mvm_newBoolean' argument 1 names different: declaration 'value' definition 'source'.
+MVM_EXPORT mvm_Value mvm_newBoolean(bool value);
+                                         ^
+native-vm/microvium.c:4680:27: note: Function 'mvm_newBoolean' argument 1 names different: declaration 'value' definition 'source'.
+Value mvm_newBoolean(bool source) {
+                          ^
+native-vm/microvium.c:4685:55: style:inconclusive: Function 'vm_allocString' argument 3 names different: declaration 'data' definition 'out_pData'. [funcArgNamesDifferent]
+Value vm_allocString(VM* vm, size_t sizeBytes, void** out_pData) {
+                                                      ^
+native-vm/microvium_internals.h:826:62: note: Function 'vm_allocString' argument 3 names different: declaration 'data' definition 'out_pData'.
+static Value vm_allocString(VM* vm, size_t sizeBytes, void** data);
+                                                             ^
+native-vm/microvium.c:4685:55: note: Function 'vm_allocString' argument 3 names different: declaration 'data' definition 'out_pData'.
+Value vm_allocString(VM* vm, size_t sizeBytes, void** out_pData) {
+                                                      ^
+native-vm/microvium.c:4706:41: style:inconclusive: Function 'mvm_newString' argument 2 names different: declaration 'valueUtf8' definition 'sourceUtf8'. [funcArgNamesDifferent]
+Value mvm_newString(VM* vm, const char* sourceUtf8, size_t sizeBytes) {
+                                        ^
+native-vm/microvium.h:314:60: note: Function 'mvm_newString' argument 2 names different: declaration 'valueUtf8' definition 'sourceUtf8'.
+MVM_EXPORT mvm_Value mvm_newString(mvm_VM* vm, const char* valueUtf8, size_t sizeBytes);
+                                                           ^
+native-vm/microvium.c:4706:41: note: Function 'mvm_newString' argument 2 names different: declaration 'valueUtf8' definition 'sourceUtf8'.
+Value mvm_newString(VM* vm, const char* sourceUtf8, size_t sizeBytes) {
+                                        ^
+native-vm/microvium.c:5068:45: style:inconclusive: Function 'vm_objectKeys' argument 2 names different: declaration 'pObject' definition 'inout_slot'. [funcArgNamesDifferent]
+static TeError vm_objectKeys(VM* vm, Value* inout_slot) {
+                                            ^
+native-vm/microvium_internals.h:878:45: note: Function 'vm_objectKeys' argument 2 names different: declaration 'pObject' definition 'inout_slot'.
+static TeError vm_objectKeys(VM* vm, Value* pObject);
+                                            ^
+native-vm/microvium.c:5068:45: note: Function 'vm_objectKeys' argument 2 names different: declaration 'pObject' definition 'inout_slot'.
+static TeError vm_objectKeys(VM* vm, Value* inout_slot) {
+                                            ^
+native-vm/microvium.c:5642:49: style:inconclusive: Function 'vm_stringSizeUtf8' argument 2 names different: declaration 'str' definition 'value'. [funcArgNamesDifferent]
+static uint16_t vm_stringSizeUtf8(VM* vm, Value value) {
+                                                ^
+native-vm/microvium_internals.h:831:49: note: Function 'vm_stringSizeUtf8' argument 2 names different: declaration 'str' definition 'value'.
+static uint16_t vm_stringSizeUtf8(VM* vm, Value str);
+                                                ^
+native-vm/microvium.c:5642:49: note: Function 'vm_stringSizeUtf8' argument 2 names different: declaration 'str' definition 'value'.
+static uint16_t vm_stringSizeUtf8(VM* vm, Value value) {
+                                                ^
+native-vm/microvium.c:6451:75: style:inconclusive: Function 'mvm_uint8ArrayFromBytes' argument 3 names different: declaration 'size' definition 'sizeBytes'. [funcArgNamesDifferent]
+mvm_Value mvm_uint8ArrayFromBytes(mvm_VM* vm, const uint8_t* data, size_t sizeBytes) {
+                                                                          ^
+native-vm/microvium.h:329:86: note: Function 'mvm_uint8ArrayFromBytes' argument 3 names different: declaration 'size' definition 'sizeBytes'.
+MVM_EXPORT mvm_Value mvm_uint8ArrayFromBytes(mvm_VM* vm, const uint8_t* data, size_t size);
+                                                                                     ^
+native-vm/microvium.c:6451:75: note: Function 'mvm_uint8ArrayFromBytes' argument 3 names different: declaration 'size' definition 'sizeBytes'.
+mvm_Value mvm_uint8ArrayFromBytes(mvm_VM* vm, const uint8_t* data, size_t sizeBytes) {
+                                                                          ^
+native-vm/microvium.c:469:15: style: Local variable 'lpVar' shadows outer variable [shadowVariable]
+      LongPtr lpVar;
+              ^
+native-vm/microvium.c:361:15: note: Shadowed declaration
+      LongPtr lpVar;
+              ^
+native-vm/microvium.c:469:15: note: Shadow variable
+      LongPtr lpVar;
+              ^
+native-vm/microvium.c:3623:16: style: Local variable 'headerWord' shadows outer variable [shadowVariable]
+      uint16_t headerWord = readAllocationHeaderWord(props);
+               ^
+native-vm/microvium.c:3523:18: note: Shadowed declaration
+  const uint16_t headerWord = pSrc[-1];
+                 ^
+native-vm/microvium.c:3623:16: note: Shadow variable
+      uint16_t headerWord = readAllocationHeaderWord(props);
+               ^
+native-vm/microvium.c:3635:18: style: Local variable 'headerWord' shadows outer variable [shadowVariable]
+        uint16_t headerWord = readAllocationHeaderWord(child);
+                 ^
+native-vm/microvium.c:3623:16: note: Shadowed declaration
+      uint16_t headerWord = readAllocationHeaderWord(props);
+               ^
+native-vm/microvium.c:3635:18: note: Shadow variable
+        uint16_t headerWord = readAllocationHeaderWord(child);
+                 ^
+native-vm/microvium.c:3636:18: style: Local variable 'allocationSize' shadows outer variable [shadowVariable]
+        uint16_t allocationSize = vm_getAllocationSizeExcludingHeaderFromHeaderWord(headerWord);
+                 ^
+native-vm/microvium.c:3624:16: note: Shadowed declaration
+      uint16_t allocationSize = vm_getAllocationSizeExcludingHeaderFromHeaderWord(headerWord);
+               ^
+native-vm/microvium.c:3636:18: note: Shadow variable
+        uint16_t allocationSize = vm_getAllocationSizeExcludingHeaderFromHeaderWord(headerWord);
+                 ^
+native-vm/microvium.c:3851:15: style: Local variable 'p' shadows outer variable [shadowVariable]
+    uint16_t* p = (uint16_t*)getBucketDataBegin(bucket);
+              ^
+native-vm/microvium.c:3733:13: note: Shadowed declaration
+  uint16_t* p;
+            ^
+native-vm/microvium.c:3851:15: note: Shadow variable
+    uint16_t* p = (uint16_t*)getBucketDataBegin(bucket);
+              ^
+native-vm/microvium.c:5127:14: style: Local variable 'propsSize' shadows outer variable [shadowVariable]
+    uint16_t propsSize = vm_getAllocationSize_long(lpPropList) - sizeof(TsPropertyList);
+             ^
+native-vm/microvium.c:5093:12: note: Shadowed declaration
+  uint16_t propsSize = 0;
+           ^
+native-vm/microvium.c:5127:14: note: Shadow variable
+    uint16_t propsSize = vm_getAllocationSize_long(lpPropList) - sizeof(TsPropertyList);
+             ^
+native-vm/microvium.c:5702:19: style: Variable 'type' is assigned a value that is never used. [unreadVariable]
+  TeTypeCode type = deepTypeOf(vm, value);
+                  ^
+native-vm/microvium.c:6424:17: style: Variable 'context' is assigned a value that is never used. [unreadVariable]
+  void* context = vm->context;
+                ^
+native-vm/microvium.c:6345:0: information: Skipping configuration 'MVM_NATIVE_POINTER_IS_16_BIT' since the value of 'MVM_NATIVE_POINTER_IS_16_BIT' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  if (MVM_NATIVE_POINTER_IS_16_BIT && (sizeof(void*) != 2)) return MVM_E_EXPECTED_POINTER_SIZE_TO_BE_16_BIT;
+^
+native-vm/microvium.c:6346:0: information: Skipping configuration 'MVM_NATIVE_POINTER_IS_16_BIT' since the value of 'MVM_NATIVE_POINTER_IS_16_BIT' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  if ((!MVM_NATIVE_POINTER_IS_16_BIT) && (sizeof(void*) == 2)) return MVM_E_EXPECTED_POINTER_SIZE_NOT_TO_BE_16_BIT;
+^
+native-vm/microvium.c:2539:5: style:inconclusive: Boolean expression 'offset>=getSectionOffset(vm->lpBytecode,BCS_ROM)' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+    & (offset < getSectionOffset(vm->lpBytecode, vm_sectionAfter(vm, BCS_ROM)));
+    ^
+native-vm/microvium.c:5172:3: style: Redundant initialization for '_vObjectValuePotentialCycleNumber'. The initialized value is overwritten before it is read. [redundantInitialization]
+  MVM_SET_LOCAL(vObjectValue, pOperands[0]);
+  ^
+native-vm/microvium.c:5166:3: note: _vObjectValuePotentialCycleNumber is initialized
+  MVM_LOCAL(Value, vObjectValue, 0);
+  ^
+native-vm/microvium.c:5172:3: note: _vObjectValuePotentialCycleNumber is overwritten
+  MVM_SET_LOCAL(vObjectValue, pOperands[0]);
+  ^
+native-vm/microvium.c:3584:18: style: Local variable 'headerWord' shadows outer variable [shadowVariable]
+        uint16_t headerWord = readAllocationHeaderWord(pData);
+                 ^
+native-vm/microvium.c:3523:18: note: Shadowed declaration
+  const uint16_t headerWord = pSrc[-1];
+                 ^
+native-vm/microvium.c:3584:18: note: Shadow variable
+        uint16_t headerWord = readAllocationHeaderWord(pData);
+                 ^
+native-vm/microvium.c:2611:0: information: Skipping configuration 'MVM_SUPPORT_FLOAT' since the value of 'MVM_SUPPORT_FLOAT' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  if (MVM_SUPPORT_FLOAT && !(featureFlags & (1 << FF_FLOAT_SUPPORT))) {
+^
+rubbish/2022-05-19-arm-compile-ptr-access/test.c:33:41: error: Signed integer overflow for expression '(int)0x8765<<16'. [integerOverflow]
+  int* p = (int*)((int)x | ((int)0x8765 << 16));
+                                        ^
+test/getting-started/code/5.restoring-a-snapshot-in-c.c:58:46: style:inconclusive: Function 'resolveImport' argument 1 names different: declaration 'id' definition 'funcID'. [funcArgNamesDifferent]
+mvm_TeError resolveImport(mvm_HostFunctionID funcID, void* context, mvm_TfHostFunction* out) {
+                                             ^
+test/getting-started/code/5.restoring-a-snapshot-in-c.c:14:46: note: Function 'resolveImport' argument 1 names different: declaration 'id' definition 'funcID'.
+mvm_TeError resolveImport(mvm_HostFunctionID id, void*, mvm_TfHostFunction* out);
+                                             ^
+test/getting-started/code/5.restoring-a-snapshot-in-c.c:58:46: note: Function 'resolveImport' argument 1 names different: declaration 'id' definition 'funcID'.
+mvm_TeError resolveImport(mvm_HostFunctionID funcID, void* context, mvm_TfHostFunction* out) {
+                                             ^
+test/getting-started/code/microvium/microvium.c:6008:7: style: Non-boolean value returned from function returning bool [returnNonBoolInBooleanFunction]
+      return MVM_E_FATAL_ERROR_MUST_KILL_VM;
+      ^
+test/getting-started/code/microvium/microvium.c:6014:7: style: Non-boolean value returned from function returning bool [returnNonBoolInBooleanFunction]
+      return MVM_E_FATAL_ERROR_MUST_KILL_VM;
+      ^
+test/getting-started/code/microvium/microvium.c:2184:26: style:inconclusive: Boolean expression 'reg2B==0' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+        if ((reg2B == 0) & (reg1I < 0)) {
+                         ^
+test/getting-started/code/microvium/microvium.c:4184:24: warning: Either the condition '!handler' is redundant or there is possible null pointer dereference: handler. [nullPointerRedundantCheck]
+    mvm_TfHostFunction handler = NULL;
+                       ^
+test/getting-started/code/microvium/microvium.c:4190:9: note: Assuming that condition '!handler' is not redundant
+    if (!handler) {
+        ^
+test/getting-started/code/microvium/microvium.c:4184:24: note: Null pointer dereference
+    mvm_TfHostFunction handler = NULL;
+                       ^
+test/getting-started/code/microvium/microvium.c:2313:24: style: Variable 'lpProgramCounter' is reassigned a value before the old one has been used. [redundantAssignment]
+      lpProgramCounter = LongPtr_add(vm->lpBytecode, reg2 & ~1);
+                       ^
+test/getting-started/code/microvium/microvium.c:2302:9: note: lpProgramCounter is assigned
+        POP_REGISTERS();
+        ^
+test/getting-started/code/microvium/microvium.c:2313:24: note: lpProgramCounter is overwritten
+      lpProgramCounter = LongPtr_add(vm->lpBytecode, reg2 & ~1);
+                       ^
+test/getting-started/code/microvium/microvium.c:5723:7: style:inconclusive: Consecutive return, break, continue, goto or throw statements are unnecessary. [duplicateBreak]
+      break;
+      ^
+test/getting-started/code/microvium/microvium.c:1587:32: style:inconclusive: Function 'mvm_call' argument 2 names different: declaration 'func' definition 'targetFunc'. [funcArgNamesDifferent]
+TeError mvm_call(VM* vm, Value targetFunc, Value* out_result, Value* args, uint8_t argCount) {
+                               ^
+test/getting-started/code/microvium/microvium.h:199:55: note: Function 'mvm_call' argument 2 names different: declaration 'func' definition 'targetFunc'.
+MVM_EXPORT mvm_TeError mvm_call(mvm_VM* vm, mvm_Value func, mvm_Value* out_result, mvm_Value* args, uint8_t argCount);
+                                                      ^
+test/getting-started/code/microvium/microvium.c:1587:32: note: Function 'mvm_call' argument 2 names different: declaration 'func' definition 'targetFunc'.
+TeError mvm_call(VM* vm, Value targetFunc, Value* out_result, Value* args, uint8_t argCount) {
+                               ^
+test/getting-started/code/microvium/microvium.c:4074:56: style:inconclusive: Function 'mvm_restore' argument 2 names different: declaration 'snapshotBytecode' definition 'lpBytecode'. [funcArgNamesDifferent]
+TeError mvm_restore(mvm_VM** result, MVM_LONG_PTR_TYPE lpBytecode, size_t bytecodeSize_, void* context, mvm_TfResolveImport resolveImport) {
+                                                       ^
+test/getting-started/code/microvium/microvium.h:179:71: note: Function 'mvm_restore' argument 2 names different: declaration 'snapshotBytecode' definition 'lpBytecode'.
+MVM_EXPORT mvm_TeError mvm_restore(mvm_VM** result, MVM_LONG_PTR_TYPE snapshotBytecode, size_t bytecodeSize, void* context, mvm_TfResolveImport resolveImport);
+                                                                      ^
+test/getting-started/code/microvium/microvium.c:4074:56: note: Function 'mvm_restore' argument 2 names different: declaration 'snapshotBytecode' definition 'lpBytecode'.
+TeError mvm_restore(mvm_VM** result, MVM_LONG_PTR_TYPE lpBytecode, size_t bytecodeSize_, void* context, mvm_TfResolveImport resolveImport) {
+                                                       ^
+test/getting-started/code/microvium/microvium.c:4074:75: style:inconclusive: Function 'mvm_restore' argument 3 names different: declaration 'bytecodeSize' definition 'bytecodeSize_'. [funcArgNamesDifferent]
+TeError mvm_restore(mvm_VM** result, MVM_LONG_PTR_TYPE lpBytecode, size_t bytecodeSize_, void* context, mvm_TfResolveImport resolveImport) {
+                                                                          ^
+test/getting-started/code/microvium/microvium.h:179:96: note: Function 'mvm_restore' argument 3 names different: declaration 'bytecodeSize' definition 'bytecodeSize_'.
+MVM_EXPORT mvm_TeError mvm_restore(mvm_VM** result, MVM_LONG_PTR_TYPE snapshotBytecode, size_t bytecodeSize, void* context, mvm_TfResolveImport resolveImport);
+                                                                                               ^
+test/getting-started/code/microvium/microvium.c:4074:75: note: Function 'mvm_restore' argument 3 names different: declaration 'bytecodeSize' definition 'bytecodeSize_'.
+TeError mvm_restore(mvm_VM** result, MVM_LONG_PTR_TYPE lpBytecode, size_t bytecodeSize_, void* context, mvm_TfResolveImport resolveImport) {
+                                                                          ^
+test/getting-started/code/microvium/microvium.c:4517:55: style:inconclusive: Function 'vm_findScopedVariable' argument 2 names different: declaration 'index' definition 'varIndex'. [funcArgNamesDifferent]
+static LongPtr vm_findScopedVariable(VM* vm, uint16_t varIndex) {
+                                                      ^
+test/getting-started/code/microvium/microvium.c:1411:55: note: Function 'vm_findScopedVariable' argument 2 names different: declaration 'index' definition 'varIndex'.
+static LongPtr vm_findScopedVariable(VM* vm, uint16_t index);
+                                                      ^
+test/getting-started/code/microvium/microvium.c:4517:55: note: Function 'vm_findScopedVariable' argument 2 names different: declaration 'index' definition 'varIndex'.
+static LongPtr vm_findScopedVariable(VM* vm, uint16_t varIndex) {
+                                                      ^
+test/getting-started/code/microvium/microvium.c:4559:52: style:inconclusive: Function 'mvm_getMemoryStats' argument 2 names different: declaration 'out_stats' definition 'r'. [funcArgNamesDifferent]
+void mvm_getMemoryStats(VM* vm, mvm_TsMemoryStats* r) {
+                                                   ^
+test/getting-started/code/microvium/microvium.h:387:67: note: Function 'mvm_getMemoryStats' argument 2 names different: declaration 'out_stats' definition 'r'.
+MVM_EXPORT void mvm_getMemoryStats(mvm_VM* vm, mvm_TsMemoryStats* out_stats);
+                                                                  ^
+test/getting-started/code/microvium/microvium.c:4559:52: note: Function 'mvm_getMemoryStats' argument 2 names different: declaration 'out_stats' definition 'r'.
+void mvm_getMemoryStats(VM* vm, mvm_TsMemoryStats* r) {
+                                                   ^
+test/getting-started/code/microvium/microvium.c:5586:58: style:inconclusive: Function 'mvm_resolveExports' argument 2 names different: declaration 'ids' definition 'idTable'. [funcArgNamesDifferent]
+TeError mvm_resolveExports(VM* vm, const mvm_VMExportID* idTable, Value* resultTable, uint8_t count) {
+                                                         ^
+test/getting-started/code/microvium/microvium.h:356:77: note: Function 'mvm_resolveExports' argument 2 names different: declaration 'ids' definition 'idTable'.
+MVM_EXPORT mvm_TeError mvm_resolveExports(mvm_VM* vm, const mvm_VMExportID* ids, mvm_Value* results, uint8_t count);
+                                                                            ^
+test/getting-started/code/microvium/microvium.c:5586:58: note: Function 'mvm_resolveExports' argument 2 names different: declaration 'ids' definition 'idTable'.
+TeError mvm_resolveExports(VM* vm, const mvm_VMExportID* idTable, Value* resultTable, uint8_t count) {
+                                                         ^
+test/getting-started/code/microvium/microvium.c:5586:74: style:inconclusive: Function 'mvm_resolveExports' argument 3 names different: declaration 'results' definition 'resultTable'. [funcArgNamesDifferent]
+TeError mvm_resolveExports(VM* vm, const mvm_VMExportID* idTable, Value* resultTable, uint8_t count) {
+                                                                         ^
+test/getting-started/code/microvium/microvium.h:356:93: note: Function 'mvm_resolveExports' argument 3 names different: declaration 'results' definition 'resultTable'.
+MVM_EXPORT mvm_TeError mvm_resolveExports(mvm_VM* vm, const mvm_VMExportID* ids, mvm_Value* results, uint8_t count);
+                                                                                            ^
+test/getting-started/code/microvium/microvium.c:5586:74: note: Function 'mvm_resolveExports' argument 3 names different: declaration 'results' definition 'resultTable'.
+TeError mvm_resolveExports(VM* vm, const mvm_VMExportID* idTable, Value* resultTable, uint8_t count) {
+                                                                         ^
+test/getting-started/code/microvium/microvium.c:6211:27: style:inconclusive: Function 'mvm_newBoolean' argument 1 names different: declaration 'value' definition 'source'. [funcArgNamesDifferent]
+Value mvm_newBoolean(bool source) {
+                          ^
+test/getting-started/code/microvium/microvium.h:295:42: note: Function 'mvm_newBoolean' argument 1 names different: declaration 'value' definition 'source'.
+MVM_EXPORT mvm_Value mvm_newBoolean(bool value);
+                                         ^
+test/getting-started/code/microvium/microvium.c:6211:27: note: Function 'mvm_newBoolean' argument 1 names different: declaration 'value' definition 'source'.
+Value mvm_newBoolean(bool source) {
+                          ^
+test/getting-started/code/microvium/microvium.c:6216:55: style:inconclusive: Function 'vm_allocString' argument 3 names different: declaration 'data' definition 'out_pData'. [funcArgNamesDifferent]
+Value vm_allocString(VM* vm, size_t sizeBytes, void** out_pData) {
+                                                      ^
+test/getting-started/code/microvium/microvium.c:1376:62: note: Function 'vm_allocString' argument 3 names different: declaration 'data' definition 'out_pData'.
+static Value vm_allocString(VM* vm, size_t sizeBytes, void** data);
+                                                             ^
+test/getting-started/code/microvium/microvium.c:6216:55: note: Function 'vm_allocString' argument 3 names different: declaration 'data' definition 'out_pData'.
+Value vm_allocString(VM* vm, size_t sizeBytes, void** out_pData) {
+                                                      ^
+test/getting-started/code/microvium/microvium.c:6237:41: style:inconclusive: Function 'mvm_newString' argument 2 names different: declaration 'valueUtf8' definition 'sourceUtf8'. [funcArgNamesDifferent]
+Value mvm_newString(VM* vm, const char* sourceUtf8, size_t sizeBytes) {
+                                        ^
+test/getting-started/code/microvium/microvium.h:314:60: note: Function 'mvm_newString' argument 2 names different: declaration 'valueUtf8' definition 'sourceUtf8'.
+MVM_EXPORT mvm_Value mvm_newString(mvm_VM* vm, const char* valueUtf8, size_t sizeBytes);
+                                                           ^
+test/getting-started/code/microvium/microvium.c:6237:41: note: Function 'mvm_newString' argument 2 names different: declaration 'valueUtf8' definition 'sourceUtf8'.
+Value mvm_newString(VM* vm, const char* sourceUtf8, size_t sizeBytes) {
+                                        ^
+test/getting-started/code/microvium/microvium.c:6599:45: style:inconclusive: Function 'vm_objectKeys' argument 2 names different: declaration 'pObject' definition 'inout_slot'. [funcArgNamesDifferent]
+static TeError vm_objectKeys(VM* vm, Value* inout_slot) {
+                                            ^
+test/getting-started/code/microvium/microvium.c:1428:45: note: Function 'vm_objectKeys' argument 2 names different: declaration 'pObject' definition 'inout_slot'.
+static TeError vm_objectKeys(VM* vm, Value* pObject);
+                                            ^
+test/getting-started/code/microvium/microvium.c:6599:45: note: Function 'vm_objectKeys' argument 2 names different: declaration 'pObject' definition 'inout_slot'.
+static TeError vm_objectKeys(VM* vm, Value* inout_slot) {
+                                            ^
+test/getting-started/code/microvium/microvium.c:7173:49: style:inconclusive: Function 'vm_stringSizeUtf8' argument 2 names different: declaration 'str' definition 'value'. [funcArgNamesDifferent]
+static uint16_t vm_stringSizeUtf8(VM* vm, Value value) {
+                                                ^
+test/getting-started/code/microvium/microvium.c:1381:49: note: Function 'vm_stringSizeUtf8' argument 2 names different: declaration 'str' definition 'value'.
+static uint16_t vm_stringSizeUtf8(VM* vm, Value str);
+                                                ^
+test/getting-started/code/microvium/microvium.c:7173:49: note: Function 'vm_stringSizeUtf8' argument 2 names different: declaration 'str' definition 'value'.
+static uint16_t vm_stringSizeUtf8(VM* vm, Value value) {
+                                                ^
+test/getting-started/code/microvium/microvium.c:7982:75: style:inconclusive: Function 'mvm_uint8ArrayFromBytes' argument 3 names different: declaration 'size' definition 'sizeBytes'. [funcArgNamesDifferent]
+mvm_Value mvm_uint8ArrayFromBytes(mvm_VM* vm, const uint8_t* data, size_t sizeBytes) {
+                                                                          ^
+test/getting-started/code/microvium/microvium.h:329:86: note: Function 'mvm_uint8ArrayFromBytes' argument 3 names different: declaration 'size' definition 'sizeBytes'.
+MVM_EXPORT mvm_Value mvm_uint8ArrayFromBytes(mvm_VM* vm, const uint8_t* data, size_t size);
+                                                                                     ^
+test/getting-started/code/microvium/microvium.c:7982:75: note: Function 'mvm_uint8ArrayFromBytes' argument 3 names different: declaration 'size' definition 'sizeBytes'.
+mvm_Value mvm_uint8ArrayFromBytes(mvm_VM* vm, const uint8_t* data, size_t sizeBytes) {
+                                                                          ^
+test/getting-started/code/microvium/microvium.c:2000:15: style: Local variable 'lpVar' shadows outer variable [shadowVariable]
+      LongPtr lpVar;
+              ^
+test/getting-started/code/microvium/microvium.c:1892:15: note: Shadowed declaration
+      LongPtr lpVar;
+              ^
+test/getting-started/code/microvium/microvium.c:2000:15: note: Shadow variable
+      LongPtr lpVar;
+              ^
+test/getting-started/code/microvium/microvium.c:5154:16: style: Local variable 'headerWord' shadows outer variable [shadowVariable]
+      uint16_t headerWord = readAllocationHeaderWord(props);
+               ^
+test/getting-started/code/microvium/microvium.c:5054:18: note: Shadowed declaration
+  const uint16_t headerWord = pSrc[-1];
+                 ^
+test/getting-started/code/microvium/microvium.c:5154:16: note: Shadow variable
+      uint16_t headerWord = readAllocationHeaderWord(props);
+               ^
+test/getting-started/code/microvium/microvium.c:5166:18: style: Local variable 'headerWord' shadows outer variable [shadowVariable]
+        uint16_t headerWord = readAllocationHeaderWord(child);
+                 ^
+test/getting-started/code/microvium/microvium.c:5154:16: note: Shadowed declaration
+      uint16_t headerWord = readAllocationHeaderWord(props);
+               ^
+test/getting-started/code/microvium/microvium.c:5166:18: note: Shadow variable
+        uint16_t headerWord = readAllocationHeaderWord(child);
+                 ^
+test/getting-started/code/microvium/microvium.c:5167:18: style: Local variable 'allocationSize' shadows outer variable [shadowVariable]
+        uint16_t allocationSize = vm_getAllocationSizeExcludingHeaderFromHeaderWord(headerWord);
+                 ^
+test/getting-started/code/microvium/microvium.c:5155:16: note: Shadowed declaration
+      uint16_t allocationSize = vm_getAllocationSizeExcludingHeaderFromHeaderWord(headerWord);
+               ^
+test/getting-started/code/microvium/microvium.c:5167:18: note: Shadow variable
+        uint16_t allocationSize = vm_getAllocationSizeExcludingHeaderFromHeaderWord(headerWord);
+                 ^
+test/getting-started/code/microvium/microvium.c:5382:15: style: Local variable 'p' shadows outer variable [shadowVariable]
+    uint16_t* p = (uint16_t*)getBucketDataBegin(bucket);
+              ^
+test/getting-started/code/microvium/microvium.c:5264:13: note: Shadowed declaration
+  uint16_t* p;
+            ^
+test/getting-started/code/microvium/microvium.c:5382:15: note: Shadow variable
+    uint16_t* p = (uint16_t*)getBucketDataBegin(bucket);
+              ^
+test/getting-started/code/microvium/microvium.c:6658:14: style: Local variable 'propsSize' shadows outer variable [shadowVariable]
+    uint16_t propsSize = vm_getAllocationSize_long(lpPropList) - sizeof(TsPropertyList);
+             ^
+test/getting-started/code/microvium/microvium.c:6624:12: note: Shadowed declaration
+  uint16_t propsSize = 0;
+           ^
+test/getting-started/code/microvium/microvium.c:6658:14: note: Shadow variable
+    uint16_t propsSize = vm_getAllocationSize_long(lpPropList) - sizeof(TsPropertyList);
+             ^
+test/getting-started/code/microvium/microvium.c:1168:9: style: struct member 'TsVirtual::state' is never used. [unusedStructMember]
+  Value state;
+        ^
+test/getting-started/code/microvium/microvium.c:1169:9: style: struct member 'TsVirtual::type' is never used. [unusedStructMember]
+  Value type;
+        ^
+test/getting-started/code/microvium/microvium.c:1205:12: style: struct member 'TsBreakpoint::bytecodeAddress' is never used. [unusedStructMember]
+  uint16_t bytecodeAddress;
+           ^
+test/getting-started/code/microvium/microvium.c:1322:12: style: struct member 'TsAllocationHeader::headerData' is never used. [unusedStructMember]
+  uint16_t headerData;
+           ^
+test/getting-started/code/microvium/microvium.c:1326:11: style: struct member 'TsBytecodeFunc::maxStackDepth' is never used. [unusedStructMember]
+  uint8_t maxStackDepth;
+          ^
+test/getting-started/code/microvium/microvium.c:7233:19: style: Variable 'type' is assigned a value that is never used. [unreadVariable]
+  TeTypeCode type = deepTypeOf(vm, value);
+                  ^
+test/getting-started/code/microvium/microvium.c:7955:17: style: Variable 'context' is assigned a value that is never used. [unreadVariable]
+  void* context = vm->context;
+                ^
+test/getting-started/code/microvium/microvium.c:7876:0: information: Skipping configuration 'MVM_NATIVE_POINTER_IS_16_BIT' since the value of 'MVM_NATIVE_POINTER_IS_16_BIT' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  if (MVM_NATIVE_POINTER_IS_16_BIT && (sizeof(void*) != 2)) return MVM_E_EXPECTED_POINTER_SIZE_TO_BE_16_BIT;
+^
+test/getting-started/code/microvium/microvium.c:7877:0: information: Skipping configuration 'MVM_NATIVE_POINTER_IS_16_BIT' since the value of 'MVM_NATIVE_POINTER_IS_16_BIT' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+  if ((!MVM_NATIVE_POINTER_IS_16_BIT) && (sizeof(void*) == 2)) return MVM_E_EXPECTED_POINTER_SIZE_NOT_TO_BE_16_BIT;
+^
+test/getting-started/code/microvium/microvium.c:4070:5: style:inconclusive: Boolean expression 'offset>=getSectionOffset(vm->lpBytecode,BCS_ROM)' is used in bitwise operation. Did you mean '&&'? [bitwiseOnBoolean]
+    & (offset < getSectionOffset(vm->lpBytecode, vm_sectionAfter(vm, BCS_ROM)));
+    ^
+test/getting-started/code/microvium/microvium.c:6703:3: style: Redundant initialization for '_vObjectValuePotentialCycleNumber'. The initialized value is overwritten before it is read. [redundantInitialization]
+  MVM_SET_LOCAL(vObjectValue, pOperands[0]);
+  ^
+test/getting-started/code/microvium/microvium.c:6697:3: note: _vObjectValuePotentialCycleNumber is initialized
+  MVM_LOCAL(Value, vObjectValue, 0);
+  ^
+test/getting-started/code/microvium/microvium.c:6703:3: note: _vObjectValuePotentialCycleNumber is overwritten
+  MVM_SET_LOCAL(vObjectValue, pOperands[0]);
+  ^
+test/getting-started/code/microvium/microvium.c:5115:18: style: Local variable 'headerWord' shadows outer variable [shadowVariable]
+        uint16_t headerWord = readAllocationHeaderWord(pData);
+                 ^
+test/getting-started/code/microvium/microvium.c:5054:18: note: Shadowed declaration
+  const uint16_t headerWord = pSrc[-1];
+                 ^
+test/getting-started/code/microvium/microvium.c:5115:18: note: Shadow variable
+        uint16_t headerWord = readAllocationHeaderWord(pData);
+                 ^
+test/getting-started/code/microvium/microvium.c:4761:56: style:inconclusive: Function 'ShortPtr_decode' argument 2 names different: declaration 'shortPtr' definition 'ptr'. [funcArgNamesDifferent]
+  static inline void* ShortPtr_decode(VM* vm, ShortPtr ptr) {
+                                                       ^
+test/getting-started/code/microvium/microvium.c:1422:47: note: Function 'ShortPtr_decode' argument 2 names different: declaration 'shortPtr' definition 'ptr'.
+static void* ShortPtr_decode(VM* vm, ShortPtr shortPtr);
+                                              ^
+test/getting-started/code/microvium/microvium.c:4761:56: note: Function 'ShortPtr_decode' argument 2 names different: declaration 'shortPtr' definition 'ptr'.
+  static inline void* ShortPtr_decode(VM* vm, ShortPtr ptr) {
+                                                       ^
+native-vm-vs-project/yaml-cpp/src/contrib/graphbuilder.cpp:8:0: style: The function 'BuildGraphOfNextDocument' is never used. [unusedFunction]
+
+^
+native-vm-vs-project/yaml-cpp/src/node.cpp:6:0: style: The function 'Clone' is never used. [unusedFunction]
+
+^
+native-vm-vs-project/yaml-cpp/src/binary.cpp:68:0: style: The function 'DecodeBase64' is never used. [unusedFunction]
+
+^
+native-vm-vs-project/yaml-cpp/src/emit.cpp:20:0: style: The function 'Dump' is never used. [unusedFunction]
+
+^
+native-vm-vs-project/yaml-cpp/src/emitterstate.cpp:117:0: style: The function 'EndedDoc' is never used. [unusedFunction]
+
+^
+native-vm-vs-project/yaml-cpp/src/parse.cpp:65:0: style: The function 'LoadAllFromFile' is never used. [unusedFunction]
+
+^
+native-vm-vs-project/yaml-cpp/src/scanner.cpp:383:0: style: The function 'ThrowParserException' is never used. [unusedFunction]
+
+^
+native-vm-vs-project/allocator.c:86:0: style: The function 'allocator_free' is never used. [unusedFunction]
+
+^
+native-vm-vs-project/allocator.c:37:0: style: The function 'allocator_malloc' is never used. [unusedFunction]
+
+^
+rubbish/2022-05-19-arm-compile-ptr-access/test.c:23:0: style: The function 'bar' is never used. [unusedFunction]
+
+^
+rubbish/2022-05-19-arm-compile-ptr-access/test.c:28:0: style: The function 'baz' is never used. [unusedFunction]
+
+^
+native-vm-bindings/NativeVM.cc:405:0: style: The function 'codeCoverage' is never used. [unusedFunction]
+
+^
+dist-c/microvium.c:5520:0: style: The function 'dbgPC' is never used. [unusedFunction]
+
+^
+dist-c/microvium.c:5517:0: style: The function 'dbgStack' is never used. [unusedFunction]
+
+^
+dist-c/microvium.c:5514:0: style: The function 'dbgStackDepth' is never used. [unusedFunction]
+
+^
+native-vm-vs-project/project.cpp:211:0: style: The function 'fatalError' is never used. [unusedFunction]
+
+^
+rubbish/2022-05-19-arm-compile-ptr-access/test.c:8:0: style: The function 'foo1' is never used. [unusedFunction]
+
+^
+rubbish/2022-05-19-arm-compile-ptr-access/test.c:13:0: style: The function 'foo2' is never used. [unusedFunction]
+
+^
+rubbish/2022-05-19-arm-compile-ptr-access/test.c:18:0: style: The function 'foo3' is never used. [unusedFunction]
+
+^
+dist-c/microvium.c:7891:0: style: The function 'mvm_getCurrentAddress' is never used. [unusedFunction]
+
+^
+dist-c/microvium.c:6203:0: style: The function 'mvm_stringSizeUtf8' is never used. [unusedFunction]
+
+^
+rubbish/2022-05-19-arm-compile-ptr-access/test.c:32:0: style: The function 'qux' is never used. [unusedFunction]
+
+^
+dist-c/microvium.c:5629:0: style: The function 'vm_cloneHandle' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
